@@ -2,16 +2,17 @@ const express=require("express");
 const { createTodo, updateTodo } = require("./types");
 const { todo } = require("./db");
 const app=express();
-const port=process.env.PORT||5001;
+app.use(express.json());
+const port=process.env.PORT||8001;
 app.post("/todo",async(req,res)=>{
   const createPayload=req.body;
   const parsePayload=createTodo.safeParse(createPayload);
-  if(!parsePayload)
+  if(!parsePayload.success)
     {
       res.status(411).json({
         msg:"Invalid Input Please try again!!",
       })
-      return;
+      return ;
     }
      await todo.create({
       title:createPayload.title,
@@ -27,6 +28,7 @@ app.post("/todo",async(req,res)=>{
   app.get("/todos",async(req,res)=>{
    try{
     const todos= await todo.find({});
+    console.log(todos);
     res.status(201).json({
       msg:todos,
     })
@@ -42,7 +44,7 @@ app.post("/todo",async(req,res)=>{
   
     const updatePayload=req.body;
     const parsePayload=updateTodo.safeParse(updatePayload);
-    if(!parsePayload)
+    if(!parsePayload.success)
       {
         res.status(411).json({
           msg:"Invalid Input Please try again!!",

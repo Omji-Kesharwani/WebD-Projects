@@ -5,9 +5,18 @@ mongoose.connect('mongodb+srv://admin1:df6KMOw0ZC4bTwtv@omjihelper.ppekmck.mongo
 });
 
 const todoSchema=new mongoose.Schema({
-  title:String,
-  description:String,
-  completed:Boolean,
+  title:{
+    type:String,
+    required:true,
+  },
+  description:{
+  type:String,
+  required:true,
+},
+  completed:{
+    type:Boolean,
+    default:false,
+  },
 })
 
 const todo=mongoose.model("todo",todoSchema);
