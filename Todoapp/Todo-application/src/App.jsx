@@ -1,4 +1,8 @@
+import CreateTodo from "./components/CreateTodo";
+import './App.css'
 function App(){
-return <h1>Hi there</h1>
+return <center>
+  <CreateTodo></CreateTodo>
+</center>
 }
 export default App;

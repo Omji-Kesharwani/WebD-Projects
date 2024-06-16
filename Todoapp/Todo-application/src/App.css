@@ -1,0 +1,31 @@
+.title-input{
+padding :1rem 2.7rem ;
+margin: 1rem 2rem;
+border-radius:1rem ;
+font-size: 1.2rem;
+border: none;
+outline: none;
+}
+.description-input{
+padding :1rem 2.7rem ;
+margin: 1rem 2rem;
+border-radius:1rem ;
+font-size: 1.2rem;
+border:none;
+outline: none;
+}
+.todoBtn{
+  padding:1rem;
+  border-radius:2rem ;
+  border:none;
+  background-color: #28C76F;
+}
+body{
+
+background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 30%, #FFCC70 66%, #ffffff 100%);
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+height: 100vh;
+overflow: hidden;
+}
